@@ -1,0 +1,216 @@
+/* Căn giữa nội dung trên trang */
+body {
+    background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Container chính của trò chơi */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;  /* Giới hạn kích thước tối đa */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước tổng thể */
+}
+
+/* Định dạng cho tiêu đề */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: #343a40;
+}
+
+h1 i {
+    font-size: 2rem; /* Kích thước icon */
+    margin-right: 10px; /* Khoảng cách giữa icon và văn bản */
+}
+
+/* Định dạng cho hình quả chuối */
+.banana-img {
+    width: 100px;  /* Kích thước nhỏ hơn cho các màn hình nhỏ */
+    max-width: 150px;  /* Kích thước tối đa */
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho số đếm */
+.counter {
+    font-size: 2rem;  /* Kích thước chữ lớn hơn trên màn hình nhỏ */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+/* Định dạng cho bộ đếm thời gian */
+.timer {
+    font-size: 1.5rem;  /* Kích thước chữ lớn hơn trên màn hình nhỏ */
+    margin-top: 20px;
+    color: #495057;
+}
+
+/* Nút bắt đầu và nút nhập tên */
+#start-btn, #submit-name {
+    font-size: 1rem;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#start-btn i, #submit-name i {
+    margin-right: 5px;
+}
+
+/* Hiệu ứng khi click chuối */
+.banana-clicked {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Định dạng cho bảng xếp hạng */
+.scoreboard {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;  /* Giới hạn kích thước tối đa */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng cho phần tiêu đề bảng xếp hạng */
+.scoreboard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+#score-list {
+    list-style: none;
+    padding-left: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#score-list li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tạo style cho hộp thoại nhập tên người chơi */
+.custom-prompt {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;  /* Giới hạn kích thước tối đa */
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+    display: none;
+}
+
+.custom-prompt h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.custom-prompt input {
+    margin-bottom: 10px;
+    width: calc(100% - 20px); /* Tính toán để có kích thước hợp lý trên các màn hình nhỏ */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    font-size: 1rem;
+}
+
+.custom-prompt button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.custom-prompt button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+    .counter {
+        font-size: 1.5rem;
+    }
+
+    .banana-img {
+        width: 80px;
+        max-width: 120px;
+    }
+
+    .timer {
+        font-size: 1rem;
+    }
+
+    .scoreboard h3 {
+        font-size: 1.25rem;
+    }
+
+    #score-list li {
+        font-size: 0.875rem;
+    }
+
+    .custom-prompt h4 {
+        font-size: 1rem;
+    }
+
+    .custom-prompt input {
+        font-size: 0.875rem;
+    }
+
+    .custom-prompt button {
+        font-size: 0.875rem;
+        padding: 6px 12px;
+    }
+
+    /* Ẩn bảng xếp hạng và hộp thoại nhập tên trên màn hình nhỏ */
+    .scoreboard, .custom-prompt {
+        display: none;
+    }
+}

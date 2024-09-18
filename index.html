@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Click Game</title>
+    <link rel="shortcut icon" href="https://community.akamai.steamstatic.com/economy/image/a5HYp9Sw61Iks7TiNF57DFqT0e-WtnR84yvwcWpNrTTcGA/360fx360f" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Bộ đếm số lần click -->
+        <div class="counter" id="counter">0</div>
+
+        <!-- Hình quả chuối để click -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg" class="banana-img" id="banana" alt="Banana">
+
+        <!-- Bộ đếm thời gian -->
+        <div class="timer" id="timer">Thời gian còn lại: 30</div>
+
+        <!-- Nút Bắt đầu -->
+        <button class="btn btn-primary" id="start-btn">Bắt đầu</button>
+
+        <!-- Bảng xếp hạng -->
+        <div class="scoreboard">
+            <h3>Bảng xếp hạng</h3>
+            <ul id="score-list"></ul>
+        </div>
+    </div>
+
+    <!-- Phần nhập tên người chơi khi kết thúc trò chơi -->
+    <div class="custom-prompt" id="name-prompt">
+        <h4>Hết giờ! Nhập tên của bạn:</h4>
+        <input type="text" id="player-name" placeholder="Nhập tên của bạn">
+        <button id="submit-name">Lưu điểm</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
